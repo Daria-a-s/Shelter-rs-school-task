@@ -1,0 +1,548 @@
+$color-primary: #f1cdb3;
+$color-primary-light: #fddcc4;
+
+$color-light-s: #fafafa;
+$color-light-l: #f6f6f6;
+$color-light-xl: #ffffff;
+
+$color-dark-s: #cdcdcd;
+$color-dark-m: #b2b2b2;
+$color-dark-l: #545454;
+$color-dark-xl: #4c4c4c;
+$color-dark-2xl: #444444;
+$color-dark-3xl: #292929;
+
+$footer-gradient-background: url("../../assets/images/noise_transparent@2x.png"),
+  radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%),
+  #211f20;
+
+$card_hover: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+
+@mixin h2 {
+  font: {
+    family: Georgia;
+    size: 4.4rem;
+    weight: 400;
+  }
+  line-height: 130%;
+}
+
+@mixin h3 {
+  font: {
+    family: Georgia;
+    style: normal;
+    size: 3.5rem;
+    weight: normal;
+  }
+  line-height: 130%;
+  letter-spacing: 0.21rem;
+}
+
+@mixin h4 {
+  font: {
+    family: Georgia;
+    style: normal;
+    weight: normal;
+    size: 2rem;
+  }
+  line-height: 111%;
+  letter-spacing: 0.12rem;
+}
+
+@mixin h5 {
+  font: {
+    family: Georgia;
+    style: normal;
+    weight: normal;
+    size: 1.5rem;
+  }
+  line-height: 110%;
+  letter-spacing: 0.09rem;
+}
+
+@mixin paragraph-l {
+  font: {
+    family: Arial;
+    style: normal;
+    weight: normal;
+    size: 1.5rem;
+  }
+  line-height: 160%;
+}
+
+@mixin paragraph-s {
+  font: {
+    family: Arial;
+    style: italic;
+    weight: normal;
+    size: 1.2rem;
+  }
+  line-height: 150%;
+}
+
+@mixin logo_title {
+  font: {
+    family: Georgia;
+    style: normal;
+    weight: normal;
+    size: 3.2rem;
+  }
+  letter-spacing: 0.192rem;
+}
+
+@mixin logo_subtitle {
+  font: {
+    family: Arial;
+    style: normal;
+    weight: normal;
+    size: 1.3rem;
+  }
+  line-height: 110%;
+  letter-spacing: 0.13rem;
+}
+
+@mixin pagination_button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5.2rem;
+  height: 5.2rem;
+  box-shadow: inset 0 0 0 0.2rem $color-primary;
+  border-radius: 50%;
+  padding: 1.6rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: 1s;
+
+  &:hover {
+    background-color: $color-primary-light;
+    box-shadow: none;
+  }
+}
+
+@mixin pagination_button_disabled {
+    @include pagination_button;
+    box-shadow: inset 0 0 0 0.2rem $color-dark-s;
+    cursor: no-drop;
+    &:hover {
+        box-shadow: inset 0 0 0 0.2rem $color-dark-s;
+        background: transparent;
+    }
+}
+
+@mixin pagination_button_active {
+    @include pagination_button;
+    background-color: $color-primary;
+    &:hover {
+        background-color: $color-primary;
+        cursor: auto;
+    }
+}
+
+@mixin button() {
+  padding: 1.5rem 4.5rem;
+  font-size: 1.7rem;
+  border-radius: 10rem;
+  line-height: 135%;
+  letter-spacing: 0.108rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: 1s;
+}
+
+@mixin button_primary() {
+  background-color: $color-primary;
+  &:hover {
+    background-color: $color-primary-light;
+  }
+  @include button;
+}
+
+@mixin button_secondary() {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px $color-primary;
+  &:hover {
+    background-color: $color-primary-light;
+    box-shadow: none;
+  }
+  @include button;
+}
+
+.burger-btn {
+  visibility: hidden;
+  display: none;
+  z-index: 10;
+}
+
+.overlay, .overlay-popup {
+  visibility: hidden;
+  background: rgba(0,0,0,0.7); 
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 0;
+}
+.overlay-popup {
+  z-index: 1;
+}
+
+.pets-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    position: sticky;
+    top: 0;
+    min-height: 12rem;
+    background-color: $color-light-xl;
+
+    .pets-header .wrapper {
+      padding: 0 1rem;
+    }
+  
+  .menu {
+    width: 44.3rem;
+    display: flex;
+    background-color: #ffffff;
+  }
+  
+  .logo {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  
+    &__title {
+        @include logo_title;
+        color: $color-dark-l;
+        width: 19rem;
+    }
+  
+    &__subtitle {
+      margin-top: 1rem;
+      color: $color-dark-3xl;
+      text-align: center;
+      @include logo_subtitle;
+    }
+  }
+  
+  .list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  
+    .list__item {
+      display: flex;
+      align-items: center;
+  
+      .list__link {
+        font-family: Arial;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 160%;
+        color: $color-dark-l;
+  
+        &__activated {
+          border-bottom: 0.3rem solid $color-primary;
+          color: $color-dark-xl;
+        }
+  
+        &__disabled {
+          color: $color-dark-l;
+          &:active {
+            border-bottom: 0.3rem solid $color-primary;
+        }
+        &#disabled:active {
+          border: none;
+        }
+        
+        }
+
+        &:hover {
+            color: $color-dark-3xl;
+            
+        }
+      }
+    }
+
+    #disabled:hover {
+        color: $color-dark-l;
+        pointer-events: none;
+        cursor: auto;
+      }
+  }
+}
+
+.main {
+    &__wrapper {
+        padding-top: 8rem;
+        padding-bottom: 10rem;
+        flex-direction: column;
+    }
+
+    &-pets__title {
+        color: $color-dark-l;
+        text-align: center;
+        @include h3();
+
+        span {
+            display: block;
+        }
+    }
+
+    &-pets-cards {
+        margin-top: 6rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: 4rem;
+        row-gap: 3rem;
+    }
+
+    &-paginations {
+        display: flex;
+        justify-content: center;
+        margin-top: 6rem;
+
+        &__button {
+            @include pagination_button();
+            margin: 0 1rem;
+            @include h4;
+
+            &:disabled {
+                @include pagination_button_disabled();
+            }
+
+            &_active {
+                @include pagination_button_active;
+            }
+        }
+    }
+}
+
+  .pets-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.9rem;
+
+    &:hover {
+      box-shadow: $card_hover;
+    }
+
+    &__image {
+      width: 100%;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 3rem;
+      align-items: center;
+    }
+
+    &__title {
+      margin: 3rem 0;
+      text-align: center;
+      @include h4;
+    }
+
+    &__button {
+      @include button_secondary;
+      margin-top: 0.1rem;
+    }
+  }
+
+  #burger-menu {
+    visibility: hidden;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -32rem;
+    max-width: 32rem;
+    background: $color-dark-3xl;
+    height: 100%;
+    will-change: transform;
+    z-index: 10;
+  }
+  
+  #burger-menu ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    position: static;
+  }
+  
+  #burger-menu .list__item{
+    height: 10rem;
+    list-style: none;
+  }
+  
+  .list-burger .list__link {
+    font-family: Arial;
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 160%;
+    color: $color-dark-s;
+
+    &__activated {
+      border-bottom: 0.3rem solid $color-primary;
+      color: $color-light-s;
+    }
+
+    &:active {
+        border-bottom: 0.3rem solid $color-primary;
+        color: $color-light-s;
+    }
+
+    &:hover {
+      color: $color-light-s;
+  }
+  
+  &#disabled:hover {
+    color: $color-dark-s;
+    cursor: auto;
+  }
+  &#disabled:active {
+    border: none;
+    color: $color-dark-s;
+  }
+    
+  }
+  
+#bugreg-menu .list-burger {
+  #disabled:hover {
+    color: $color-dark-s;
+    cursor: auto;
+}
+}
+  
+  #burger-menu {
+  .logo {
+    position: relative;
+    left: 0;
+    top: 2rem;
+    width: 20rem;
+    height: 5rem;
+    z-index: 2;
+  }
+}
+
+  #burger-menu .logo__title {
+      color: $color-primary;
+  }
+
+  #burger-menu .logo__subtitle {
+    color: $color-light-xl;
+  }
+
+  @media screen and (max-width: 1279px) {
+    body, html {
+      max-width: 100%;
+    }  
+
+      .main__wrapper {
+          padding-bottom: 7.6rem;
+      }
+      .main-pets-cards {
+        justify-content: center;
+        margin-top: 3rem;
+        max-width: 90rem;
+        .pets-card {
+            width: 27rem;
+            height: 43.5rem;
+            margin: 0 0.2rem;
+          }
+
+          .pets-card:nth-child(7),
+          .pets-card:nth-child(8) {
+            display: none;
+          }
+      }
+      
+      .main-paginations {
+        margin-top: 4rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+
+    body, html {
+      max-width: 100%;
+    }
+  
+    .burger-btn {
+      display: block;
+      visibility: visible;
+      position: absolute;
+      top: 4rem;
+      right: 5.3rem;
+    }
+
+      .pets-header {
+          .menu {
+              display: none;
+          }
+      }
+
+      #burger-menu {
+        visibility: visible;
+      }
+
+    .main__wrapper {
+        max-width: 100vw;
+        padding: 4em 0 4.3rem;
+    }
+    .main-pets-cards {
+      justify-content: center;
+      flex-direction: column;
+      margin: 0 auto;
+      margin-top: 4.5rem;
+      .pets-card {
+          width: 27rem;
+          height: 43.5rem;
+          margin: 0 0.2rem;
+        }
+
+        .pets-card:nth-child(7),
+        .pets-card:nth-child(8),
+        .pets-card:nth-child(4),
+        .pets-card:nth-child(5),
+        .pets-card:nth-child(6) {
+          display: none;
+        }
+    }
+
+    .main-pets__title {
+        font-size: 2.5rem;
+    }
+    
+    .main-paginations {
+      margin-top: 4rem;
+  }
+
+  .main-paginations {
+    display: flex;
+    justify-content: center;
+
+    &__button {
+        @include pagination_button();
+        margin: 0 0.4rem;
+        max-width: 31rem;
+        @include h4;
+
+        &:disabled {
+            @include pagination_button_disabled();
+        }
+
+        &_active {
+            @include pagination_button_active;
+        }
+    }
+}
+
+}

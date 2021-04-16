@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shelter</title>
+    <link rel="stylesheet" href="../main/main.css">
+    <link rel="stylesheet" href="./pets.css">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../../assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+    <div class="overlay-popup"></div>
+
+    <header class="pets-header">
+        <div class="wrapper">
+            <div onclick="document.location ='../main/main.html'" class="logo">
+                <h1 class="logo__title">
+                    Cozy House
+                </h1>
+                <div class="logo__subtitle">
+                    Shelter for pets in Boston
+                </div>
+            </div>
+
+            <nav id="burger-menu">
+                <div onclick="document.location ='../main/main.html'" class="logo">
+                    <h1 class="logo__title">
+                        Cozy House
+                    </h1>
+                    <div class="logo__subtitle">
+                        Shelter for pets in Boston
+                    </div>
+                </div>
+                <ul class="list-burger">
+                    <li class="list__item"><a href="../main/main.html" class="list__link ">About the shelter</a></li>
+                    <li class="list__item"><a href="#" class="list__link list__link__activated">Our pets</a></li>
+                    <li class="list__item"><span class="list__link list__link__disabled" id="disabled">Help the shelter</span></li>
+                    <li class="list__item"><span class="list__link list__link__disabled" id="disabled">Contscts</span></li>
+                </ul>
+            </nav>
+
+            <img src="../../assets/icons/Burger.svg" alt="" class="burger-btn">
+            
+            <nav class="menu">
+                <ul class="list">
+                    <li class="list__item"><a href="../main/main.html" class="list__link list__link__disabled">About the shelter</a></li>
+                    <li class="list__item"><a href="#" class="list__link list__link__activated" >Our pets</a></li>
+                    <li class="list__item"><a class="list__link list__link__disabled" id="disabled">Help the shelter</a></li>
+                    <li class="list__item"><a class="list__link list__link__disabled" id="disabled">Contscts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="main__wrapper wrapper">
+
+            <div class="pets-pop-up">
+                <div class="pets-pop-up-image">
+                    <img src="../../assets/images/Jennifer.png" alt="">
+                </div>
+                <div class="pets-pop-up-content">
+
+                <button class="pets-pop-up-btn">&times;</button>
+                    <div class="pets-pop-up-name">Jennifer</div>
+                    <div class="pets-pop-up-animal"><span class="pets-pop-up-type">Dog</span> - <span class="pets-pop-up-breed"> Labrador</span></div>
+                    <div class="pets-pop-up-description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</div>
+                    <ul class="pets-pop-up-list">
+                        <li><b>Age:</b> <span class="pets-pop-up-age">2 months</span></li>
+                        <li><b>Inoculations:</b> <span class="pets-pop-up-inoculations">none</span></li>
+                        <li><b>Diseases:</b> <span class="pets-pop-up-diseases">none</span></li>
+                        <li><b>Parasites:</b> <span class="pets-pop-up-parasites">none</span></li>
+                    </ul> 
+                </div>
+            </div>
+            
+            <h3 class="main-pets__title">
+                <span>Our friends who</span>
+                <span>are looking for a house</span>
+            </h3>
+            <div class="main-pets-cards">
+                <div class="pets-card">
+                    <img src="../../assets/images/katrine.png" alt="Katrine" class="pets-card__image">
+                    <div class="pets-card__content">
+                        <h4 class="pets-card__title">Katrine</h4>
+                        <button class="pets-card__button">Learn more</button>
+                    </div>
+                </div>
+                <div class="pets-card">
+                    <img src="../../assets/images/jennifer.png" alt="Jennifer" class="pets-card__image">
+                    <div class="pets-card__content">
+                        <h4 class="pets-card__title">Jennifer</h4>
+                        <button class="pets-card__button">Learn more</button>
+                    </div>
+                </div>
+                <div class="pets-card">
+                    <img src="../../assets/images/woody.png" alt="Woody" class="pets-card__image">
+                    <div class="pets-card__content">
+                        <h4 class="pets-card__title">Woody</h4>
+                        <button class="pets-card__button">Learn more</button>
+                    </div>
+                </div>
+                <div class="pets-card">
+                    <img src="../../assets/images/sophia.png" alt="Sophia" class="pets-card__image">
+                    <div class="pets-card__content">
+                        <h4 class="pets-card__title">Sophia</h4>
+                        <button class="pets-card__button">Learn more</button>
+                    </div>
+                </div>
+                <div class="pets-card">
+                    <img src="../../assets/images/timmy.png" alt="Timmy" class="pets-card__image">
+                    <div class="pets-card__content">
+                        <h4 class="pets-card__title">Timmy</h4>
+                        <button class="pets-card__button">Learn more</button>
+                    </div>
+                </div>
+                <div class="pets-card">
+                    <img src="../../assets/images/charly.png" alt="Charly" class="pets-card__image">
+                    <div class="pets-card__content">
+                        <h4 class="pets-card__title">Charly</h4>
+                        <button class="pets-card__button">Learn more</button>
+                    </div>
+                </div>
+                <div class="pets-card">
+                    <img src="../../assets/images/scarlett.png" alt="Scarlett" class="pets-card__image">
+                    <div class="pets-card__content">
+                        <h4 class="pets-card__title">Scarlet</h4>
+                        <button class="pets-card__button">Learn more</button>
+                    </div>
+                </div>
+                <div class="pets-card">
+                    <img src="../../assets/images/freddie.png" alt="Freddie" class="pets-card__image">
+                    <div class="pets-card__content">
+                        <h4 class="pets-card__title">Freddie</h4>
+                        <button class="pets-card__button">Learn more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="main-paginations">
+                <button class="main-paginations__button " disabled id="begin">
+                    &#60;&#60;
+                </button>
+                <button class="main-paginations__button" disabled id="prev">
+                    &#60;
+                </button>
+                <button class="main-paginations__button main-paginations__button_active">
+                    1
+                </button>
+                <button class="main-paginations__button" id="next">
+                    &#62;
+                </button>
+                <button class="main-paginations__button" id="end">
+                    &#62;&#62;
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="wrap-768">
+            <div class="footer__contacts">
+                <h3 class="footer__contacts-title">
+                    For questions and suggestions
+                </h3>
+                <div class="footer__contacts-mail">
+                    <a href="mailto: email@shelter.com">
+                    <img src="../../assets/icons/mail.svg" alt="Mail" class="footer__contacts-main-icon">
+                    </a>
+                    <a href="mailto: email@shelter.com" class="footer__contacts-mail-text">
+                        email@shelter.com
+                    </a>
+                </div>
+                <div class="footer__contacts-phone">
+                    <a href="tel: +136745677554">
+                    <img src="../../assets/icons/phone.svg" alt="Phone" class="footer__contacts-phone-icon">
+                    </a>
+                    <a href="tel: +136745677554" class="footer__contacts-phone-text">
+                        +13 674 567 75 54
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__locations">
+                <h3 class="footer__locations-title">
+                    We are waiting for your visit
+                </h3>
+                <div class="footer__locations-adress">
+                    <a href="https://goo.gl/maps/6r1isdufYXD1Ubwg9"  target="_blank">
+                    <img src="../../assets/icons/pin.svg" alt="Marker" class="footer__contscts-marker">
+                    </a>
+                    <a href="https://goo.gl/maps/6r1isdufYXD1Ubwg9"  target="_blank" class="footer__locations-adress-place">
+                        1 Central Street, Boston (entrance from the store)
+                    </a>
+                </div>
+                <div class="footer__locations-adress">
+                    <a href="https://g.page/mina-salina-turda?share" target="_blank">
+                    <img src="../../assets/icons/pin.svg" alt="Marker" class="footer__locations-marker">
+                    </a>
+                    <a href="https://g.page/mina-salina-turda?share" target="_blank" class="footer__locations-adress-place">
+                        18 South Park, London
+                    </a>
+                </div>
+            </div>
+        </div>
+            <div class="footer__image-wrapper">
+                <img src="../../assets/images/footer-puppy.png" alt="" class="footer__image">
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./pets.js"></script>
+</body>
+</html>
