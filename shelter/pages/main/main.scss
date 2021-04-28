@@ -380,10 +380,6 @@ html {
     width: 100%;
     justify-content: space-between;
     padding: 8rem 17.5rem 10rem;
-
-    // .wrapper {
-    //     justify-content: center;
-    //   }
   }
 
   &__image-wrapper {
@@ -540,6 +536,10 @@ html {
       color: $color-dark-l;
       text-align: center;
       @include h4();
+    }
+
+    &-icon {
+      margin: 0 auto;
     }
   }
 }

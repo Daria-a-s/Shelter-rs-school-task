@@ -714,6 +714,10 @@ html {
   letter-spacing: 0.12rem;
 }
 
+.help__item-icon {
+  margin: 0 auto;
+}
+
 .donation {
   padding-top: 8.4rem;
   padding-bottom: 10.1rem;
